@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConvertPro | Universal File Converter</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body class="light-theme">
+    <header class="navbar">
+        <div class="container nav-content">
+            <div class="logo">
+                <i class="ph ph-arrows-left-right"></i>
+                <span>Convert<span class="highlight">Pro</span></span>
+            </div>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle Dark Mode">
+                <i class="ph ph-moon"></i>
+            </button>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero text-center">
+            <h1>Fast & Secure File Conversion</h1>
+            <p>Convert your documents, images, and more. Free, fast, and secure. Maximum file size: 50MB.</p>
+        </section>
+
+        <!-- Upload Area -->
+        <section class="glass-card upload-section" id="dropZone">
+            <div class="upload-content text-center">
+                <i class="ph ph-upload-simple upload-icon"></i>
+                <h2>Drag & Drop files here</h2>
+                <p>or</p>
+                <input type="file" id="fileInput" multiple hidden>
+                <button class="btn btn-primary" onclick="document.getElementById('fileInput').click()">Browse Files</button>
+            </div>
+        </section>
+
+        <!-- Dashboard / File List -->
+        <section class="glass-card dashboard" id="dashboard" style="display: none;">
+            <div class="dashboard-header">
+                <h2>Conversion Dashboard</h2>
+                <button class="btn btn-secondary btn-sm" id="downloadAllBtn" style="display: none;">
+                    <i class="ph ph-download-simple"></i> Download All (ZIP)
+                </button>
+            </div>
+            
+            <div class="file-list" id="fileList">
+                <!-- File items populate here dynamically -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container text-center">
+            <p>&copy; 2026 ConvertPro. Files are automatically deleted after 1 hour for your privacy.</p>
+        </div>
+    </footer>
+    
+    <div id="toastContainer" class="toast-container"></div>
+
+    <script src="main.js"></script>
+</body>
+</html>
